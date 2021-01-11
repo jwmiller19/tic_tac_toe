@@ -54,8 +54,7 @@ class TicTacToeNode
         pos = [row, col]
         next unless board.empty?(pos)
 
-        @prev_move_pos = pos
-        next_node = TicTacToeNode.new(board.dup, alternate_mark, prev_move_pos)
+        next_node = TicTacToeNode.new(board.dup, alternate_mark, pos)
         next_node.board[pos] = next_mover_mark
 
         nodes << next_node
